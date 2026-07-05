@@ -1,0 +1,15 @@
+<sigml>
+
+	<hns_sign gloss="شابة">
+		<hamnosys_nonmanual>
+		</hamnosys_nonmanual>
+		<hamnosys_manual>
+			<hamfinger2345/>
+			<hamextfingero/>
+			<hampalmr/>
+			<hamshouldertop/>
+			<hammovei/>
+		</hamnosys_manual>
+	</hns_sign>
+
+</sigml>

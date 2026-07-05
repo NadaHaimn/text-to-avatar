@@ -1,0 +1,17 @@
+<sigml>
+
+	<hns_sign gloss="رئيس مجلس الشعب (النواب)">
+		<hamnosys_nonmanual>
+		</hamnosys_nonmanual>
+		<hamnosys_manual>
+			<hamfinger2345/>
+			<hamthumbopenmod/>
+			<hamextfingero/>
+			<hampalmi/>
+			<hamstomach/>
+			<hammovei/>
+			<hamsymmlr/>
+		</hamnosys_manual>
+	</hns_sign>
+
+</sigml>

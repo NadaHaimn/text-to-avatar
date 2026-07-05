@@ -1,0 +1,14 @@
+<sigml>
+
+	<hns_sign gloss="المسجد الأقصى">
+		<hamnosys_nonmanual>
+		</hamnosys_nonmanual>
+		<hamnosys_manual>
+			<hamfinger23/>
+			<hamextfingeru/>
+			<hampalmi/>
+			<hamnose/>
+		</hamnosys_manual>
+	</hns_sign>
+
+</sigml>

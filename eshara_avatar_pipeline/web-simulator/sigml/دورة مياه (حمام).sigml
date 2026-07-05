@@ -1,0 +1,16 @@
+<sigml>
+
+	<hns_sign gloss="دورة مياه (حمام)">
+		<hamnosys_nonmanual>
+		</hamnosys_nonmanual>
+		<hamnosys_manual>
+			<hamfinger2345/>
+			<hampalmo/>
+			<hamchest/>
+			<hammoveu/>
+			<hamlargemod/>
+			<hamsymmlr/>
+		</hamnosys_manual>
+	</hns_sign>
+
+</sigml>

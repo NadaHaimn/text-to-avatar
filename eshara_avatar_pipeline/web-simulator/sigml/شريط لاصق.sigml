@@ -1,0 +1,15 @@
+<sigml>
+
+	<hns_sign gloss="شريط لاصق">
+		<hamnosys_nonmanual>
+		</hamnosys_nonmanual>
+		<hamnosys_manual>
+			<hamfinger2345/>
+			<hampalmi/>
+			<hamstomach/>
+			<hammovei/>
+			<hamlargemod/>
+		</hamnosys_manual>
+	</hns_sign>
+
+</sigml>

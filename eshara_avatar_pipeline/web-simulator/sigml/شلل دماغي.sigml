@@ -1,0 +1,15 @@
+<sigml>
+
+	<hns_sign gloss="شلل دماغي">
+		<hamnosys_nonmanual>
+		</hamnosys_nonmanual>
+		<hamnosys_manual>
+			<hamfinger2345/>
+			<hamextfingeru/>
+			<hampalmo/>
+			<hamnose/>
+			<hammoved/>
+		</hamnosys_manual>
+	</hns_sign>
+
+</sigml>

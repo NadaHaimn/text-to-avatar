@@ -1,0 +1,14 @@
+<sigml>
+
+	<hns_sign gloss="مسجل">
+		<hamnosys_nonmanual>
+		</hamnosys_nonmanual>
+		<hamnosys_manual>
+			<hamfinger2/>
+			<hamextfingeru/>
+			<hampalmr/>
+			<hamstomach/>
+		</hamnosys_manual>
+	</hns_sign>
+
+</sigml>

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>3D ASL-Translator</title>
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <meta http-equiv="Access-Control-Allow-Methods" content="GET">
+    <link rel="stylesheet" href="cwa/cwasa.css" />
+    <script type="text/javascript" src="cwa/allcsa.js"></script>
+    <script type="text/javascript">
+        var playingTimeout; // Global variable to keep track of the timeout
+        var stopRequested = false; // Global variable to track stop requests
+        var categories = {}; // Global variable to store categories
+
+        // Load categories from JSON file
+        fetch('categories_files.json')
+            .then(response => response.json())
+            .then(data => {
+                categories = data;
+                populateCategoryMenus();
+            });
+
+        // Play a single SiGML URL
+        function playSiGML(sigmlURL) {
+            var loc = window.location.href;
+            var locDir = loc.substring(0, loc.lastIndexOf('/'));
+            sigmlURL = locDir + "/" + sigmlURL;
+            CWASA.playSiGMLURL(sigmlURL);
+        }
+
+        // Play gloss words sequentially
+        function playGloss() {
+            stopRequested = false; // Reset the stop request flag
+            var glossInput = document.getElementById("glossInput").value;
+            var glosses = findGlosses(glossInput);
+            playGlossesSequentially(glosses, 0);
+        }
+
+        // Sliding window function to find valid glosses
+        // IMPORTANT: max len=4 to match Python backend's dynamic max_gloss_words
+        // (e.g. "يكتب على الآلة الكاتبة" = 4 words)
+        function findGlosses(input) {
+            var words = input.split(' ');
+            var glosses = [];
+            for (var i = 0; i < words.length; i++) {
+                for (var len = 4; len >= 1; len--) {
+                    if (i + len <= words.length) {
+                        var potentialGloss = words.slice(i, i + len).join(' ');
+                        if (isValidGloss(potentialGloss)) {
+                            glosses.push(potentialGloss);
+                            i += len - 1;
+                            break;
+                        }
+                    }
+                }
+            }
+            return glosses;
+        }
+
+        // Check if a gloss (file name) is valid
+        function isValidGloss(gloss) {
+            var fileExists = false;
+            var request = new XMLHttpRequest();
+            request.open('HEAD', "sigml/" + gloss + ".sigml", false);
+            request.onload = function () {
+                if (request.status == 200) {
+                    fileExists = true;
+                }
+            };
+            request.send();
+            return fileExists;
+        }
+
+        // Recursive function to play glosses sequentially
+        function playGlossesSequentially(glosses, index) {
+            if (index < glosses.length && !stopRequested) {
+                var sigmlURL = "sigml/" + glosses[index] + ".sigml";
+                playSiGML(sigmlURL);
+
+                playingTimeout = setTimeout(function () {
+                    playGlossesSequentially(glosses, index + 1);
+                }, 1650);
+            }
+        }
+
+        // Function to reset the input and stop the avatar
+        function resetGloss() {
+            document.getElementById("glossInput").value = "";
+            stopRequested = true; // Set the stop request flag
+            clearTimeout(playingTimeout);
+        }
+
+        // Populate category menus
+        function populateCategoryMenus() {
+            var categoriesDiv = document.getElementById("categories");
+            for (var category in categories) {
+                var select = document.createElement("select");
+                select.setAttribute("id", category);
+                var defaultOption = document.createElement("option");
+                defaultOption.value = "";
+                defaultOption.text = category;
+                select.appendChild(defaultOption);
+                categories[category].forEach(function (word) {
+                    var option = document.createElement("option");
+                    option.value = word;
+                    option.text = word;
+                    select.appendChild(option);
+                });
+                categoriesDiv.appendChild(select);
+                categoriesDiv.appendChild(document.createElement("br"));
+            }
+        }
+
+        // Add selected words to the text input
+function addSelectedWords() {
+    var glossInput = document.getElementById("glossInput");
+    var selectedWords = [];
+    for (var category in categories) {
+        var select = document.getElementById(category);
+        for (var option of select.options) {
+            if (option.selected && option.value !== "") {
+                selectedWords.push(option.value);
+            }
+        }
+        // Reset the selector
+        select.selectedIndex = 0;
+    }
+    glossInput.value = selectedWords.join(' ');
+}
+
+        // ============================================================
+        // ===== إضافات Eshara: تشغيل تلقائي عبر URL query params =====
+        // ============================================================
+        // بيسمح للـ API إنه يبني رابط زي:
+        //   index.html?words=أنا,ذهب,مدرسة&autoplay=1
+        // فيتشغل الأفاتار تلقائيًا من غير ما حد يدوس زرار "Sign" يدويًا.
+        // ده الإضافة الوحيدة على المشروع الأصلي — باقي الكود زي ما هو
+        // تمامًا عشان الاستخدام اليدوي (القوائم، الـ input) يفضل شغال.
+
+        // بيبعت رسالة postMessage للصفحة الأب (لو الصفحة دي متحملة
+        // جوه iframe/WebView) عشان تعرف إن التشغيل خلص أو حصل فيه مشكلة.
+        // ده مفيد جدًا للفلاتر لو عايزين يعرفوا "الأنيميشن خلصت" من غير
+        // ما يعتمدوا على توقيت ثابت من جانبهم.
+        function notifyParent(status, detail) {
+            if (window.parent && window.parent !== window) {
+                window.parent.postMessage({
+                    source: "eshara-avatar",
+                    status: status,   // "started" | "word_played" | "completed" | "word_missing"
+                    detail: detail || null
+                }, "*");
+            }
+        }
+
+        // حالة لتتبع تشغيل الكلمات لأن CWASA لا يدعم مسح الأحداث (removeHook)
+        var sequenceState = {
+            glosses: [],
+            index: 0,
+            missingWords: [],
+            hookAdded: false
+        };
+
+        function playNextInSequence() {
+            if (stopRequested) {
+                notifyParent("stopped");
+                return;
+            }
+            if (sequenceState.index >= sequenceState.glosses.length) {
+                notifyParent("completed", { missingWords: sequenceState.missingWords });
+                return;
+            }
+            var gloss = sequenceState.glosses[sequenceState.index];
+            var sigmlURL = "sigml/" + gloss + ".sigml";
+            
+            playSiGML(sigmlURL);
+            notifyParent("word_played", { word: gloss, index: sequenceState.index, total: sequenceState.glosses.length });
+        }
+
+        // الدالة التي تعمل عند انتهاء أي حركة للأفاتار
+        var animidleHandler = function(event) {
+            // التقدم للكلمة التالية فقط إذا لم ننتهي ولم يتم الإيقاف
+            if (sequenceState.index < sequenceState.glosses.length && !stopRequested) {
+                sequenceState.index++;
+                setTimeout(playNextInSequence, 50);
+            }
+        };
+
+        // نسخة محسنة من playGlossesSequentially بتعتمد على أحداث CWASA
+        function playGlossesSequentiallyWithEvents(glosses, index, missingWords) {
+            sequenceState.glosses = glosses;
+            sequenceState.index = index;
+            sequenceState.missingWords = missingWords;
+            
+            // إضافة الحدث مرة واحدة فقط طوال عمر الصفحة
+            if (!sequenceState.hookAdded) {
+                CWASA.addHook("animidle", animidleHandler);
+                sequenceState.hookAdded = true;
+            }
+            
+            playNextInSequence();
+        }
+
+        // زي findGlosses الأصلية، لكن كمان بترجع قائمة الكلمات اللي
+        // مالهاش ملف sigml موجود (عشان الفلاتر يعرفوا إيه اللي اتشال)
+        function findGlossesWithMissing(input) {
+            var words = input.split(' ').filter(function (w) { return w.length > 0; });
+            var glosses = [];
+            var missing = [];
+            for (var i = 0; i < words.length; i++) {
+                var found = false;
+                for (var len = 2; len >= 1; len--) {
+                    if (i + len <= words.length) {
+                        var potentialGloss = words.slice(i, i + len).join(' ');
+                        if (isValidGloss(potentialGloss)) {
+                            glosses.push(potentialGloss);
+                            i += len - 1;
+                            found = true;
+                            break;
+                        }
+                    }
+                }
+                if (!found) {
+                    missing.push(words[i]);
+                }
+            }
+            return { glosses: glosses, missing: missing };
+        }
+
+        // بتقرأ ?words=كلمة1,كلمة2,كلمة3 من الـ URL وتشغلها تلقائيًا.
+        // الكلمات متفصولة بـ comma وURL-encoded من جانب الـ API.
+        //
+        // FIX: بنتجاوز isValidGloss() (sync XHR) عمدًا —
+        // الـ API يتحقق من كل كلمة قبل بناء الرابط، لا داعي لـ HEAD request
+        // لكل كلمة (كان يجمّد الـ render thread بشكل كامل).
+        function autoplayFromQueryParams() {
+            var params = new URLSearchParams(window.location.search);
+            var wordsParam = params.get("words");
+            if (!wordsParam) return; // مفيش query param، الصفحة تشتغل يدوي
+
+            var words = wordsParam.split(',').map(function (w) {
+                return decodeURIComponent(w.trim());
+            }).filter(function (w) { return w.length > 0; });
+
+            document.getElementById("glossInput").value = words.join(' ');
+
+            // نشغّل مباشرة — الـ API ضمن صحة كل كلمة، لا sync XHR هنا
+            stopRequested = false;
+            notifyParent("started", { requested: words, missing: [] });
+
+            // تغيير الأفاتار لو مبعوت في الرابط
+            var avatarParam = params.get("avatar");
+            if (avatarParam) {
+                // قائمة الأفاتار بيتم إنشاؤها بعد ما CWASA يبدأ، بنستنى لحد ما تظهر ونغيرها
+                var checkAvatarMenu = setInterval(function() {
+                    var select = document.querySelector('.CWASAAvMenu select');
+                    if (select) {
+                        clearInterval(checkAvatarMenu);
+                        if (select.value !== avatarParam) {
+                            select.value = avatarParam;
+                            // إرسال حدث change عشان محرك CWASA يحس بالتغيير ويحمل الأفاتار الجديد
+                            select.dispatchEvent(new Event('change'));
+                        }
+                    }
+                }, 50);
+            }
+
+            // الانتظار ثانية واحدة لضمان تحميل محرك الأفاتار بالكامل قبل أول حركة
+            // (لأن الأحداث زي avatarloaded ممكن تشتغل قبل ما نلحق نسجلها)
+            setTimeout(function() {
+                playGlossesSequentiallyWithEvents(words, 0, []);
+            }, 1000);
+        }
+        // ============================================================
+        // ===== نهاية إضافات Eshara =====
+        // ============================================================
+    </script>
+</head>
+
+<body onload="CWASA.init(); autoplayFromQueryParams();">
+
+    <div style="box-sizing: border-box; width: 100%; height: 100%; padding: 15px;">
+        <table align="center" style="width:100%; height:100%;">
+            <tr align="center" class="avatar-container">
+                <td width="100%" height="100%">
+                    <div class="CWASAAvatar av0" align="center" style="width: 100%; height: 100%;"></div>
+                </td>
+            </tr>
+            <tr class="controls-container" style="display: none;">
+                <td align="center">
+                    <span class="CWASAAvMenu av0"></span>
+                    <!-- Add gloss input and button -->
+                    <input type="text" id="glossInput" placeholder="أدخل النص الذي ترغب في ترجمته" />
+                    <button onclick="playGloss()">Sign</button>
+                    <button onclick="resetGloss()">Reset</button>
+
+                    <div id="categories"></div>
+                    <button onclick="addSelectedWords()">Add Selected Words</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
+ 
+

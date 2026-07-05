@@ -1,0 +1,16 @@
+<sigml>
+
+	<hns_sign gloss="معلم">
+		<hamnosys_nonmanual>
+		</hamnosys_nonmanual>
+		<hamnosys_manual>
+			<hamfist/>
+			<hamthumboutmod/>
+			<hamextfingerd/>
+			<hampalmo/>
+			<hamneutralspace/>
+			<hamsymmlr/>
+		</hamnosys_manual>
+	</hns_sign>
+
+</sigml>

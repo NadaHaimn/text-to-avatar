@@ -1,0 +1,17 @@
+<sigml>
+
+	<hns_sign gloss="حقوق">
+		<hamnosys_nonmanual>
+		</hamnosys_nonmanual>
+		<hamnosys_manual>
+			<hamfist/>
+			<hamthumboutmod/>
+			<hamextfingeri/>
+			<hampalmo/>
+			<hamchest/>
+			<hammoveu/>
+			<hamsmallmod/>
+		</hamnosys_manual>
+	</hns_sign>
+
+</sigml>
