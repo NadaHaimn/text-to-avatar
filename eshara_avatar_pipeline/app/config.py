@@ -5,6 +5,7 @@ All settings are read from .env — no code changes needed for different environ
 """
 import os
 from pydantic_settings import BaseSettings, SettingsConfigDict
+from pydantic import field_validator
 from functools import lru_cache
 
 
@@ -37,6 +38,16 @@ class Settings(BaseSettings):
 
     # --- Temp directory for audio processing ---
     temp_audio_dir: str = "temp_audio"
+
+    @field_validator('avatar_player_base_url')
+    @classmethod
+    def sanitize_base_url(cls, v: str) -> str:
+        v = v.strip()
+        # Remove common copy-paste errors at the end of the URL
+        for bad_suffix in ["\\n", "/n", "\n", "\r"]:
+            if v.endswith(bad_suffix):
+                v = v[:-len(bad_suffix)]
+        return v.strip()
 
     model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8")
 
