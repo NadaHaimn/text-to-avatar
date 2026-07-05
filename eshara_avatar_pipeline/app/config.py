@@ -29,7 +29,7 @@ class Settings(BaseSettings):
     # --- Avatar static files ---
     # Path to the algerianSignLanguage-avatar/web-simulator directory.
     # FastAPI serves it at /avatar — no separate HTTP server needed.
-    avatar_static_dir: str = "../algerianSignLanguage-avatar/web-simulator"
+    avatar_static_dir: str = "web-simulator"
 
     # --- Avatar player URL (built from avatar_static_dir mount) ---
     # Default points to the /avatar route on this same FastAPI server.
