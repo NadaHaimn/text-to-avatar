@@ -1,0 +1,15 @@
+<sigml>
+
+	<hns_sign gloss="شيطان">
+		<hamnosys_nonmanual>
+		</hamnosys_nonmanual>
+		<hamnosys_manual>
+			<hamfinger2345/>
+			<hamextfingeru/>
+			<hampalmo/>
+			<hamforehead/>
+			<hammoveu/>
+		</hamnosys_manual>
+	</hns_sign>
+
+</sigml>

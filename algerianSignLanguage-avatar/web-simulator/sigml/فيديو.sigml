@@ -1,0 +1,16 @@
+<sigml>
+
+	<hns_sign gloss="فيديو">
+		<hamnosys_nonmanual>
+		</hamnosys_nonmanual>
+		<hamnosys_manual>
+			<hamfist/>
+			<hamthumboutmod/>
+			<hamextfingero/>
+			<hampalmi/>
+			<hamchest/>
+			<hamsymmlr/>
+		</hamnosys_manual>
+	</hns_sign>
+
+</sigml>

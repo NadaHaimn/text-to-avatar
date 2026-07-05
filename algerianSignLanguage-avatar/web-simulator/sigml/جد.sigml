@@ -1,0 +1,16 @@
+<sigml>
+
+	<hns_sign gloss="جد">
+		<hamnosys_nonmanual>
+		</hamnosys_nonmanual>
+		<hamnosys_manual>
+			<hamfinger2345/>
+			<hamthumbopenmod/>
+			<hamextfingeru/>
+			<hampalmd/>
+			<hamneutralspace/>
+			<hamsymmlr/>
+		</hamnosys_manual>
+	</hns_sign>
+
+</sigml>

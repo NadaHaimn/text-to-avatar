@@ -1,0 +1,17 @@
+<sigml>
+
+	<hns_sign gloss="كنيسة">
+		<hamnosys_nonmanual>
+		</hamnosys_nonmanual>
+		<hamnosys_manual>
+			<hampinchall/>
+			<hamfingerstraightmod/>
+			<hampalmo/>
+			<hamshouldertop/>
+			<hammoved/>
+			<hamsmallmod/>
+			<hamsymmlr/>
+		</hamnosys_manual>
+	</hns_sign>
+
+</sigml>

@@ -1,0 +1,17 @@
+<sigml>
+
+	<hns_sign gloss="فك الإحرام">
+		<hamnosys_nonmanual>
+		</hamnosys_nonmanual>
+		<hamnosys_manual>
+			<hamfinger2/>
+			<hamextfingero/>
+			<hampalmi/>
+			<hamshouldertop/>
+			<hammoved/>
+			<hamlargemod/>
+			<hamsymmlr/>
+		</hamnosys_manual>
+	</hns_sign>
+
+</sigml>

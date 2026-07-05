@@ -1,0 +1,17 @@
+<sigml>
+
+	<hns_sign gloss="خزانة ملابس">
+		<hamnosys_nonmanual>
+		</hamnosys_nonmanual>
+		<hamnosys_manual>
+			<hamfinger2345/>
+			<hamthumbopenmod/>
+			<hamextfingero/>
+			<hampalmi/>
+			<hamstomach/>
+			<hammoveo/>
+			<hamsymmlr/>
+		</hamnosys_manual>
+	</hns_sign>
+
+</sigml>

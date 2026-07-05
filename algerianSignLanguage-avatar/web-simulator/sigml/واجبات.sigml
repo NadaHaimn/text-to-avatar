@@ -1,0 +1,17 @@
+<sigml>
+
+	<hns_sign gloss="واجبات">
+		<hamnosys_nonmanual>
+		</hamnosys_nonmanual>
+		<hamnosys_manual>
+			<hamfist/>
+			<hamthumboutmod/>
+			<hamextfingeri/>
+			<hampalmi/>
+			<hamchest/>
+			<hammoved/>
+			<hamsymmlr/>
+		</hamnosys_manual>
+	</hns_sign>
+
+</sigml>

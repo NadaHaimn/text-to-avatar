@@ -1,0 +1,15 @@
+<sigml>
+
+	<hns_sign gloss="حسنات">
+		<hamnosys_nonmanual>
+		</hamnosys_nonmanual>
+		<hamnosys_manual>
+			<hamfinger2345/>
+			<hampalmi/>
+			<hamshouldertop/>
+			<hammovei/>
+			<hamsmallmod/>
+		</hamnosys_manual>
+	</hns_sign>
+
+</sigml>

@@ -1,0 +1,17 @@
+<sigml>
+
+	<hns_sign gloss="الصوم">
+		<hamnosys_nonmanual>
+		</hamnosys_nonmanual>
+		<hamnosys_manual>
+			<hamfinger2345/>
+			<hamthumbopenmod/>
+			<hamextfingero/>
+			<hampalmi/>
+			<hamshouldertop/>
+			<hammoveo/>
+			<hamlargemod/>
+		</hamnosys_manual>
+	</hns_sign>
+
+</sigml>

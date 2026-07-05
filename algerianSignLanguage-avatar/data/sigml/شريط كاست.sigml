@@ -1,0 +1,16 @@
+<sigml>
+
+	<hns_sign gloss="شريط كاست">
+		<hamnosys_nonmanual>
+		</hamnosys_nonmanual>
+		<hamnosys_manual>
+			<hampinchall/>
+			<hamfingerstraightmod/>
+			<hampalmi/>
+			<hamchest/>
+			<hammoved/>
+			<hamsymmlr/>
+		</hamnosys_manual>
+	</hns_sign>
+
+</sigml>

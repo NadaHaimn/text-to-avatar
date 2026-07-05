@@ -1,0 +1,17 @@
+<sigml>
+
+	<hns_sign gloss="غرفة نوم">
+		<hamnosys_nonmanual>
+		</hamnosys_nonmanual>
+		<hamnosys_manual>
+			<hamfist/>
+			<hamthumboutmod/>
+			<hamextfingeru/>
+			<hampalmi/>
+			<hamchest/>
+			<hammovei/>
+			<hamsymmlr/>
+		</hamnosys_manual>
+	</hns_sign>
+
+</sigml>

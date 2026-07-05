@@ -1,0 +1,16 @@
+<sigml>
+
+	<hns_sign gloss="طفل">
+		<hamnosys_nonmanual>
+		</hamnosys_nonmanual>
+		<hamnosys_manual>
+			<hamfinger2345/>
+			<hamextfingero/>
+			<hampalmu/>
+			<hamshouldertop/>
+			<hammoved/>
+			<hamlargemod/>
+		</hamnosys_manual>
+	</hns_sign>
+
+</sigml>

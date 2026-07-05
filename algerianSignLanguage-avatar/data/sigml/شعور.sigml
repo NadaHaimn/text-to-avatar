@@ -1,0 +1,13 @@
+<sigml>
+
+	<hns_sign gloss="شعور">
+		<hamnosys_nonmanual>
+		</hamnosys_nonmanual>
+		<hamnosys_manual>
+			<hamfinger2345/>
+			<hampalmi/>
+			<hamstomach/>
+		</hamnosys_manual>
+	</hns_sign>
+
+</sigml>

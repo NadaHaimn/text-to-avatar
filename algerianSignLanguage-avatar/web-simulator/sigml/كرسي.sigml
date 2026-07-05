@@ -1,0 +1,17 @@
+<sigml>
+
+	<hns_sign gloss="كرسي">
+		<hamnosys_nonmanual>
+		</hamnosys_nonmanual>
+		<hamnosys_manual>
+			<hamfinger2345/>
+			<hamextfingero/>
+			<hampalmu/>
+			<hamchest/>
+			<hammoveo/>
+			<hamsmallmod/>
+			<hamsymmlr/>
+		</hamnosys_manual>
+	</hns_sign>
+
+</sigml>

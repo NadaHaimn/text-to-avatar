@@ -1,0 +1,14 @@
+<sigml>
+
+	<hns_sign gloss="هاتف ( تلفون)">
+		<hamnosys_nonmanual>
+		</hamnosys_nonmanual>
+		<hamnosys_manual>
+			<hamfinger2345/>
+			<hampalmr/>
+			<hamchest/>
+			<hammoveu/>
+		</hamnosys_manual>
+	</hns_sign>
+
+</sigml>

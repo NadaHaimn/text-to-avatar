@@ -1,0 +1,17 @@
+<sigml>
+
+	<hns_sign gloss="غدر">
+		<hamnosys_nonmanual>
+		</hamnosys_nonmanual>
+		<hamnosys_manual>
+			<hamfist/>
+			<hamthumboutmod/>
+			<hamextfingeri/>
+			<hampalmi/>
+			<hamshouldertop/>
+			<hammovei/>
+			<hamsymmlr/>
+		</hamnosys_manual>
+	</hns_sign>
+
+</sigml>

@@ -1,0 +1,15 @@
+<sigml>
+
+	<hns_sign gloss="أناني">
+		<hamnosys_nonmanual>
+		</hamnosys_nonmanual>
+		<hamnosys_manual>
+			<hamfinger2345/>
+			<hamextfingero/>
+			<hampalmo/>
+			<hamneutralspace/>
+			<hamsymmlr/>
+		</hamnosys_manual>
+	</hns_sign>
+
+</sigml>

@@ -1,0 +1,15 @@
+<sigml>
+
+	<hns_sign gloss="عصب">
+		<hamnosys_nonmanual>
+		</hamnosys_nonmanual>
+		<hamnosys_manual>
+			<hamfinger2/>
+			<hamextfingero/>
+			<hampalmi/>
+			<hamstomach/>
+			<hammovei/>
+		</hamnosys_manual>
+	</hns_sign>
+
+</sigml>

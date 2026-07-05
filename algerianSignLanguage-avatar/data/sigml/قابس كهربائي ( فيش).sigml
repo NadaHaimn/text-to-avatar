@@ -1,0 +1,16 @@
+<sigml>
+
+	<hns_sign gloss="قابس كهربائي ( فيش)">
+		<hamnosys_nonmanual>
+		</hamnosys_nonmanual>
+		<hamnosys_manual>
+			<hamfinger2345/>
+			<hamthumbopenmod/>
+			<hamextfingeru/>
+			<hampalmi/>
+			<hamchest/>
+			<hamsymmlr/>
+		</hamnosys_manual>
+	</hns_sign>
+
+</sigml>

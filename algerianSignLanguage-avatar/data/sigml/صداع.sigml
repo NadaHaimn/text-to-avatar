@@ -1,0 +1,15 @@
+<sigml>
+
+	<hns_sign gloss="صداع">
+		<hamnosys_nonmanual>
+		</hamnosys_nonmanual>
+		<hamnosys_manual>
+			<hamfinger2345/>
+			<hamextfingeru/>
+			<hampalmi/>
+			<hamnose/>
+			<hammoved/>
+		</hamnosys_manual>
+	</hns_sign>
+
+</sigml>

@@ -1,0 +1,18 @@
+<sigml>
+
+	<hns_sign gloss="خطبة العيد">
+		<hamnosys_nonmanual>
+		</hamnosys_nonmanual>
+		<hamnosys_manual>
+			<hamfinger2345/>
+			<hamthumbopenmod/>
+			<hamextfingero/>
+			<hampalmr/>
+			<hamchest/>
+			<hammoved/>
+			<hamlargemod/>
+			<hamsymmlr/>
+		</hamnosys_manual>
+	</hns_sign>
+
+</sigml>

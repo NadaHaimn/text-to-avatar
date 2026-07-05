@@ -1,0 +1,18 @@
+<sigml>
+
+	<hns_sign gloss="صورة اشعة">
+		<hamnosys_nonmanual>
+		</hamnosys_nonmanual>
+		<hamnosys_manual>
+			<hamfist/>
+			<hamthumboutmod/>
+			<hamextfingero/>
+			<hampalmo/>
+			<hamstomach/>
+			<hammoveo/>
+			<hamsmallmod/>
+			<hamsymmlr/>
+		</hamnosys_manual>
+	</hns_sign>
+
+</sigml>

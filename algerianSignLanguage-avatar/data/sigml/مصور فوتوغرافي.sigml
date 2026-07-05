@@ -1,0 +1,18 @@
+<sigml>
+
+	<hns_sign gloss="مصور فوتوغرافي">
+		<hamnosys_nonmanual>
+		</hamnosys_nonmanual>
+		<hamnosys_manual>
+			<hamfist/>
+			<hamthumboutmod/>
+			<hamextfingero/>
+			<hampalmi/>
+			<hamshouldertop/>
+			<hammoveo/>
+			<hamlargemod/>
+			<hamsymmlr/>
+		</hamnosys_manual>
+	</hns_sign>
+
+</sigml>

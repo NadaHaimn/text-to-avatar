@@ -1,0 +1,18 @@
+<sigml>
+
+	<hns_sign gloss="صحفي">
+		<hamnosys_nonmanual>
+		</hamnosys_nonmanual>
+		<hamnosys_manual>
+			<hamfist/>
+			<hamthumboutmod/>
+			<hamextfingerd/>
+			<hampalmi/>
+			<hamstomach/>
+			<hammoveu/>
+			<hamlargemod/>
+			<hamsymmlr/>
+		</hamnosys_manual>
+	</hns_sign>
+
+</sigml>

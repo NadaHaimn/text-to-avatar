@@ -1,0 +1,17 @@
+<sigml>
+
+	<hns_sign gloss="بكاء">
+		<hamnosys_nonmanual>
+		</hamnosys_nonmanual>
+		<hamnosys_manual>
+			<hamfist/>
+			<hamthumboutmod/>
+			<hamextfingerd/>
+			<hampalmi/>
+			<hamchest/>
+			<hammoved/>
+			<hamsmallmod/>
+		</hamnosys_manual>
+	</hns_sign>
+
+</sigml>

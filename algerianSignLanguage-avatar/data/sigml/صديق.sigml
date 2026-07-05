@@ -1,0 +1,16 @@
+<sigml>
+
+	<hns_sign gloss="صديق">
+		<hamnosys_nonmanual>
+		</hamnosys_nonmanual>
+		<hamnosys_manual>
+			<hamfinger2345/>
+			<hamextfingero/>
+			<hampalmo/>
+			<hamchest/>
+			<hammovei/>
+			<hamsymmlr/>
+		</hamnosys_manual>
+	</hns_sign>
+
+</sigml>

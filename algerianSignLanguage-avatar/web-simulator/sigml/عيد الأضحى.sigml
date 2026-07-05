@@ -1,0 +1,15 @@
+<sigml>
+
+	<hns_sign gloss="عيد الأضحى">
+		<hamnosys_nonmanual>
+		</hamnosys_nonmanual>
+		<hamnosys_manual>
+			<hamfinger2345/>
+			<hampalmo/>
+			<hamneutralspace/>
+			<hammoveo/>
+			<hamsymmlr/>
+		</hamnosys_manual>
+	</hns_sign>
+
+</sigml>

@@ -1,0 +1,17 @@
+<sigml>
+
+	<hns_sign gloss="احتقار">
+		<hamnosys_nonmanual>
+		</hamnosys_nonmanual>
+		<hamnosys_manual>
+			<hamfinger2345/>
+			<hamthumbopenmod/>
+			<hamextfingeru/>
+			<hampalmi/>
+			<hamneutralspace/>
+			<hammoveu/>
+			<hamsymmlr/>
+		</hamnosys_manual>
+	</hns_sign>
+
+</sigml>

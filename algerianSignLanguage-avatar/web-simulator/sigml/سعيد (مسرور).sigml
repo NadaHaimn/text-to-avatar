@@ -1,0 +1,17 @@
+<sigml>
+
+	<hns_sign gloss="سعيد (مسرور)">
+		<hamnosys_nonmanual>
+		</hamnosys_nonmanual>
+		<hamnosys_manual>
+			<hamfinger2345/>
+			<hamthumbopenmod/>
+			<hamextfingero/>
+			<hampalmo/>
+			<hamneutralspace/>
+			<hammovei/>
+			<hamsymmlr/>
+		</hamnosys_manual>
+	</hns_sign>
+
+</sigml>

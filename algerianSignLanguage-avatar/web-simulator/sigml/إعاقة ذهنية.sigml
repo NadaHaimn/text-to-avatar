@@ -1,0 +1,17 @@
+<sigml>
+
+	<hns_sign gloss="إعاقة ذهنية">
+		<hamnosys_nonmanual>
+		</hamnosys_nonmanual>
+		<hamnosys_manual>
+			<hamfinger2345/>
+			<hamthumbopenmod/>
+			<hamextfingeru/>
+			<hampalmo/>
+			<hamstomach/>
+			<hammoved/>
+			<hamsymmlr/>
+		</hamnosys_manual>
+	</hns_sign>
+
+</sigml>

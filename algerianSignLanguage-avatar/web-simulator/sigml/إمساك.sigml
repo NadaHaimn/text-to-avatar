@@ -1,0 +1,14 @@
+<sigml>
+
+	<hns_sign gloss="إمساك">
+		<hamnosys_nonmanual>
+		</hamnosys_nonmanual>
+		<hamnosys_manual>
+			<hamfinger2345/>
+			<hampalmi/>
+			<hamneutralspace/>
+			<hammovei/>
+		</hamnosys_manual>
+	</hns_sign>
+
+</sigml>

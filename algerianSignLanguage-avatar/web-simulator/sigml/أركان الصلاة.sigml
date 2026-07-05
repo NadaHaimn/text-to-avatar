@@ -1,0 +1,17 @@
+<sigml>
+
+	<hns_sign gloss="أركان الصلاة">
+		<hamnosys_nonmanual>
+		</hamnosys_nonmanual>
+		<hamnosys_manual>
+			<hamfinger2345/>
+			<hamextfingero/>
+			<hampalmi/>
+			<hamstomach/>
+			<hammoveu/>
+			<hamlargemod/>
+			<hamsymmlr/>
+		</hamnosys_manual>
+	</hns_sign>
+
+</sigml>

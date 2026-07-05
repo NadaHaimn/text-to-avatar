@@ -1,0 +1,17 @@
+<sigml>
+
+	<hns_sign gloss="وزير">
+		<hamnosys_nonmanual>
+		</hamnosys_nonmanual>
+		<hamnosys_manual>
+			<hamfist/>
+			<hamthumboutmod/>
+			<hamextfingero/>
+			<hampalmo/>
+			<hamneutralspace/>
+			<hammoved/>
+			<hamsymmlr/>
+		</hamnosys_manual>
+	</hns_sign>
+
+</sigml>

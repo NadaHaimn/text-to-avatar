@@ -1,0 +1,18 @@
+<sigml>
+
+	<hns_sign gloss="مبطلات الصلاة">
+		<hamnosys_nonmanual>
+		</hamnosys_nonmanual>
+		<hamnosys_manual>
+			<hamfinger2345/>
+			<hamthumbopenmod/>
+			<hamextfingeru/>
+			<hampalmd/>
+			<hamstomach/>
+			<hammoveu/>
+			<hamlargemod/>
+			<hamsymmlr/>
+		</hamnosys_manual>
+	</hns_sign>
+
+</sigml>

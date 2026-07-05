@@ -1,0 +1,14 @@
+<sigml>
+
+	<hns_sign gloss="ظ">
+		<hamnosys_nonmanual>
+		</hamnosys_nonmanual>
+		<hamnosys_manual>
+			<hamfinger2345/>
+			<hamextfingeru/>
+			<hampalmr/>
+			<hamchest/>
+		</hamnosys_manual>
+	</hns_sign>
+
+</sigml>

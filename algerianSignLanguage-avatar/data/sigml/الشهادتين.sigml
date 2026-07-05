@@ -1,0 +1,15 @@
+<sigml>
+
+	<hns_sign gloss="الشهادتين">
+		<hamnosys_nonmanual>
+		</hamnosys_nonmanual>
+		<hamnosys_manual>
+			<hamfinger2345/>
+			<hamextfingero/>
+			<hampalmo/>
+			<hamstomach/>
+			<hamsymmlr/>
+		</hamnosys_manual>
+	</hns_sign>
+
+</sigml>

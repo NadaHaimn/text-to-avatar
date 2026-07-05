@@ -1,0 +1,17 @@
+<sigml>
+
+	<hns_sign gloss="كهرباء">
+		<hamnosys_nonmanual>
+		</hamnosys_nonmanual>
+		<hamnosys_manual>
+			<hamfinger23/>
+			<hamextfingero/>
+			<hampalmr/>
+			<hamchest/>
+			<hammovei/>
+			<hamsmallmod/>
+			<hamsymmlr/>
+		</hamnosys_manual>
+	</hns_sign>
+
+</sigml>

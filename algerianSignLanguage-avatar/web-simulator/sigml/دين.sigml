@@ -1,0 +1,17 @@
+<sigml>
+
+	<hns_sign gloss="دين">
+		<hamnosys_nonmanual>
+		</hamnosys_nonmanual>
+		<hamnosys_manual>
+			<hamfist/>
+			<hamthumboutmod/>
+			<hamextfingeri/>
+			<hampalmr/>
+			<hamchest/>
+			<hammovei/>
+			<hamsmallmod/>
+		</hamnosys_manual>
+	</hns_sign>
+
+</sigml>

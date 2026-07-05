@@ -1,0 +1,17 @@
+<sigml>
+
+	<hns_sign gloss="زواج">
+		<hamnosys_nonmanual>
+		</hamnosys_nonmanual>
+		<hamnosys_manual>
+			<hamfinger2345/>
+			<hamthumbopenmod/>
+			<hamextfingeru/>
+			<hampalmo/>
+			<hamchest/>
+			<hammoveu/>
+			<hamsymmlr/>
+		</hamnosys_manual>
+	</hns_sign>
+
+</sigml>
